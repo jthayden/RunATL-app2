@@ -44,7 +44,7 @@ export default class EditRoute extends Component {
           <input
             type="text"
             name="name"
-            id="new-route-name"
+            id="route-name"
             onChange={this.handleInputChange}
             value={this.state.route.name}
           />
@@ -52,7 +52,7 @@ export default class EditRoute extends Component {
           <input
             type="text"
             name="description"
-            id="new-route-description"
+            id="route-description"
             onChange={this.handleInputChange}
             value={this.state.route.description}
           />
@@ -60,7 +60,7 @@ export default class EditRoute extends Component {
           <input
             type="number"
             name="distance"
-            id="new-route-distance"
+            id="route-distance"
             onChange={this.handleInputChange}
             value={this.state.route.distance}
           />
@@ -68,7 +68,7 @@ export default class EditRoute extends Component {
           <input
             type="number"
             name="rating"
-            id="new-route-rating"
+            id="route-rating"
             onChange={this.handleInputChange}
             value={this.state.route.rating}
           />

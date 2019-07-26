@@ -122,13 +122,13 @@ export default class SingleNeighborhood extends Component {
         <Link to={`/routes/${this.state.neighborhood._id}/create`}>
           Add a Route
         </Link>
-        {routeArr}
+        <div>{routeArr}</div>
 
         <h2>Groups:</h2>
         <Link to={`/groups/${this.state.neighborhood._id}/create`}>
           Add a Group
         </Link>
-        {groupArr}
+        <div>{groupArr}</div>
       </div>
     );
   }

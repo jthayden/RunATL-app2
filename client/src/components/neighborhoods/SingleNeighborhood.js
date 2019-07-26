@@ -8,7 +8,8 @@ export default class SingleNeighborhood extends Component {
   state = {
     neighborhood: {},
     redirectToHome: false,
-    routes: []
+    routes: [],
+    groups: []
   };
 
   componentDidMount() {
@@ -62,6 +63,22 @@ export default class SingleNeighborhood extends Component {
         </div>
       );
     });
+
+    let groupArr = this.state.groups.map(singleGroup => {
+      return (
+        <div>
+          <Link
+            to={`/groups/${singleGroup._id}`}
+            name={singleGroup.name}
+            description={singleGroup.description}
+            routes={singleGroup.routes}
+            contact={singleGroup.contact}
+          >
+            {singleGroup.name}
+          </Link>
+        </div>
+      );
+    });
     return (
       <div>
         <ul class="navigation">
@@ -88,7 +105,6 @@ export default class SingleNeighborhood extends Component {
         <h2>{this.state.neighborhood.name}</h2>
         <p>{this.state.neighborhood.description}</p>
         <img src={this.state.neighborhood.image} />
-       
 
         {/* <button>
           <a href="/neighborhoods">Back to Neighborhoods</a>
@@ -100,6 +116,12 @@ export default class SingleNeighborhood extends Component {
           Add a Route
         </Link>
         {routeArr}
+
+        <h2>Groups:</h2>
+        <Link to={`/groups/${this.state.neighborhood._id}/create`}>
+          Add a Group
+        </Link>
+        {groupArr}
       </div>
     );
   }

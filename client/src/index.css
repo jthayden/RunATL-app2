@@ -1,0 +1,115 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+html {
+  /* background: lightgray; */
+  margin: 30px;
+}
+
+button {
+  margin: 15px;
+}
+
+/* a {
+  margin: 15px;
+  display: block;
+  text-decoration-line: none;
+} */
+
+input.button {
+  margin-top: 15px;
+  justify-self: center;
+}
+
+form {
+  display: grid;
+  justify-items: center;
+}
+
+label {
+  margin: 25px 0px 5px 0px;
+}
+
+input {
+  width: 300px;
+}
+
+h1, h2 {
+  text-decoration-line: underline;
+}
+
+video {
+  max-width: 100%;
+  margin: 0px;
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+}
+
+.landing-page {
+  position: absolute;
+  width:100%;
+  top:50%;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 100%;
+  
+}
+
+.card {
+  /* display: block; */
+  /* width:200px; */
+}
+
+.card-group {
+  /* display: inline-grid; */
+  /* width: 200px; */
+}
+
+
+
+.navigation {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  list-style: none;
+}
+
+.neighborhoods-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: space-between;
+  margin: 35px auto;
+}
+
+.neighborhood-card {
+  /* display:inline-flex; */
+  /* width: 300px; */
+  /* height: 300px; */
+}
+
+.card-deck {
+  /* width: 300px;
+  height: 350px; */
+}
+
+.img-fluid {
+  max-height:162px;
+  min-height: 162px;
+}

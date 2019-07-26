@@ -31,7 +31,7 @@ export default class CreateRoute extends Component {
   //   };
 
   handleInputChange = event => {
-    // event.preventDefault();
+    event.preventDefault();
     const copiedRoute = { ...this.state.newRoute };
     copiedRoute[event.target.name] = event.target.value;
     this.setState({ newRoute: copiedRoute });

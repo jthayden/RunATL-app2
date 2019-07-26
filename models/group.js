@@ -11,7 +11,8 @@ const mongoose = require("./connection.js");
 const GroupSchema = new mongoose.Schema({
   name: String,
   description: String,
-  Routes: String,
+  routes: String,
+  contact: String,
   neighborhoodId: { type: mongoose.Schema.Types.ObjectId, required: true }
 });
 

@@ -37,9 +37,7 @@ export default class SingleRoute extends Component {
         <p>{this.state.route.rating} </p>
         <img src={this.state.route.image} />
         <iframe src={this.state.route.routeLink} width="640" height="480" />
-        <button onClick={this.handleDelete}>Delete Route</button>
-        <Link to={`/routes/${this.state.route._id}/edit`}>Edit Route</Link>
-      </div>
+        </div>
     );
   }
 }

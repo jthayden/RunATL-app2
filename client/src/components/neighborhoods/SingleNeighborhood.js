@@ -25,6 +25,13 @@ export default class SingleNeighborhood extends Component {
       .then(res => {
         this.setState({ routes: res.data });
       });
+    axios
+      .get(
+        `/api/groups/byNeighborhoodId/${this.props.match.params.neighborhoodId}`
+      )
+      .then(res => {
+        this.setState({ groups: res.data });
+      });
   }
 
   handleDelete = () => {
@@ -35,11 +42,11 @@ export default class SingleNeighborhood extends Component {
       });
   };
 
-  getAllRoutes() {
-    axios.get(`/api/neighborhoods/${this.state.court._id}`).then(res => {
-      this.setState({ routes: res.data });
-    });
-  }
+//   getAllRoutes() {
+//     axios.get(`/api/neighborhoods/${this.state.neighborhood._id}`).then(res => {
+//       this.setState({ routes: res.data });
+//     });
+//   }
 
   render() {
     if (this.state.redirectToHome) {

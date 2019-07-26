@@ -6,6 +6,7 @@ const express = require("express");
 //Import the api files from the models
 
 const groupApi = require("../models/group");
+const neighborhoodApi = require("../models/neighborhood");
 
 //Step 3
 //Create a new router.
@@ -15,7 +16,7 @@ const groupRouter = express.Router();
 //Step 4
 //Put all request handlers here
 groupRouter.get("/", (req, res) => {
-  let neighborhoodId = req.params.neighborhoodId
+  let neighborhoodId = req.params.neighborhoodId;
   groupApi
     .getGroupsByNeighborhoodId(neighborhoodId)
     .then(groups => {
@@ -37,11 +38,11 @@ groupRouter.get("/:groupId", (req, res) => {
     });
 });
 
-groupRouter.get('/byNeighborhoodId/:neighborhoodId', (req, res) => {
+groupRouter.get("/byNeighborhoodId/:neighborhoodId", (req, res) => {
   groupApi.getGroupsByNeighborhoodId(req.params.neighborhoodId).then(group => {
-    res.json(route)
-  })
-})
+    res.json(route);
+  });
+});
 
 groupRouter.post("/byNeighborhoodId/:neighborhoodId", (req, res) => {
   groupApi.addNewGroup(req.body).then(group => {

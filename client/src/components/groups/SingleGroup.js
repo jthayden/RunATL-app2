@@ -28,9 +28,9 @@ export default class SingleGroup extends Component {
     }
     return (
       <div>
-        <Link to={`/neighborhoods/${this.state.route.neighborhoodId}`}>
+        {/* <Link to={`/neighborhoods/${this.state.route.neighborhoodId}`}>
           Back to Neighborhood
-        </Link>
+        </Link> */}
         <h2>Group</h2>
         <p>{this.state.group.name}</p>
         <p>{this.state.group.description}</p>

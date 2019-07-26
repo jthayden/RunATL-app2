@@ -11,7 +11,8 @@ const mongoose = require("./connection.js");
 const GroupSchema = new mongoose.Schema({
   name: String,
   description: String,
-  Routes: String
+  Routes: String,
+  neighborhoodId: { type: mongoose.Schema.Types.ObjectId, required: true }
 });
 
 //Step 3
@@ -23,6 +24,10 @@ const GroupCollection = mongoose.model("Group", GroupSchema);
 
 function getAllGroups() {
   return GroupCollection.find();
+}
+
+function getGroupsByNeighborhoodId(neighborhoodId) {
+  return GroupCollection.find({ neighborhoodId: neighborhoodId });
 }
 
 function getGroup(groupId) {
@@ -51,5 +56,6 @@ module.exports = {
   getGroup,
   addNewGroup,
   updateGroup,
-  deleteGroup
+  deleteGroup,
+  getGroupsByNeighborhoodId
 };

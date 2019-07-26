@@ -15,8 +15,9 @@ const groupRouter = express.Router();
 //Step 4
 //Put all request handlers here
 groupRouter.get("/", (req, res) => {
+  let neighborhoodId = req.params.neighborhoodId
   groupApi
-    .getAllGroups()
+    .getGroupsByNeighborhoodId(neighborhoodId)
     .then(groups => {
       res.json(groups);
     })
@@ -36,7 +37,13 @@ groupRouter.get("/:groupId", (req, res) => {
     });
 });
 
-groupRouter.post("/", (req, res) => {
+groupRouter.get('/byNeighborhoodId/:neighborhoodId', (req, res) => {
+  groupApi.getGroupsByNeighborhoodId(req.params.neighborhoodId).then(group => {
+    res.json(route)
+  })
+})
+
+groupRouter.post("/byNeighborhoodId/:neighborhoodId", (req, res) => {
   groupApi.addNewGroup(req.body).then(group => {
     res.json(group);
   });

@@ -54,6 +54,8 @@ export default class SingleNeighborhood extends Component {
             s
             distance={singleRoute.distance}
             rating={singleRoute.rating}
+            image={singleRoute.image}
+            routeLink={singleRoute.routeLink}
           >
             {singleRoute.name}
           </Link>
@@ -86,11 +88,7 @@ export default class SingleNeighborhood extends Component {
         <h2>{this.state.neighborhood.name}</h2>
         <p>{this.state.neighborhood.description}</p>
         <img src={this.state.neighborhood.image} />
-        <iframe
-          src="https://www.google.com/maps/d/embed?mid=1uU3qBJcOXi7uhjl5MPd0MFUi3xA"
-          width="640"
-          height="480"
-        />
+       
 
         {/* <button>
           <a href="/neighborhoods">Back to Neighborhoods</a>

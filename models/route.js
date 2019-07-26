@@ -14,6 +14,8 @@ const RouteSchema = new mongoose.Schema({
   description: String,
   distance: Number,
   rating: Number,
+  image: String,
+  routeLink: String,
   neighborhoodId: { type: mongoose.Schema.Types.ObjectId, required: true }
 });
 

@@ -109,7 +109,11 @@ video {
   height: 350px; */
 }
 
-.img-fluid {
+.card-img-top {
   max-height:162px;
   min-height: 162px;
+}
+
+img {
+  width: 90vw;
 }

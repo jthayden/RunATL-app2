@@ -72,6 +72,22 @@ export default class EditRoute extends Component {
             onChange={this.handleInputChange}
             value={this.state.route.rating}
           />
+          <label htmlFor="route-image">Image</label>
+          <input
+            type="text"
+            name="image"
+            id="route-image"
+            onChange={this.handleInputChange}
+            value={this.state.route.image}
+          />
+          <label htmlFor="route-route-link">Route Link</label>
+          <input
+            type="text"
+            name="routeLink"
+            id="route-route-link"
+            onChange={this.handleInputChange}
+            value={this.state.route.routeLink}
+          />
           <input className="button" type="submit" value="Edit Route" />
         </form>
       </div>

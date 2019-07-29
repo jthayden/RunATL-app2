@@ -3,13 +3,14 @@ import axios from "axios";
 import { Redirect, Link } from "react-router-dom";
 import EditNeighborhood from "./EditNeighborhood.js";
 import SingleRoute from "../routes/SingleRoute";
+import { Card, CardDeck } from 'react-bootstrap'
 
 export default class SingleNeighborhood extends Component {
   state = {
     neighborhood: {},
     redirectToHome: false,
     routes: [],
-    groups: []
+    // groups: []
   };
 
   componentDidMount() {
@@ -25,13 +26,14 @@ export default class SingleNeighborhood extends Component {
       .then(res => {
         this.setState({ routes: res.data });
       });
-    axios
-      .get(
-        `/api/groups/byNeighborhoodId/${this.props.match.params.neighborhoodId}`
-      )
-      .then(res => {
-        this.setState({ groups: res.data });
-      });
+    //Not using groups now. Future implementation.  
+    // axios
+    //   .get(
+    //     `/api/groups/byNeighborhoodId/${this.props.match.params.neighborhoodId}`
+    //   )
+    //   .then(res => {
+    //     this.setState({ groups: res.data });
+    //   });
   }
 
   handleDelete = () => {
@@ -42,11 +44,6 @@ export default class SingleNeighborhood extends Component {
       });
   };
 
-//   getAllRoutes() {
-//     axios.get(`/api/neighborhoods/${this.state.neighborhood._id}`).then(res => {
-//       this.setState({ routes: res.data });
-//     });
-//   }
 
   render() {
     if (this.state.redirectToHome) {
@@ -56,6 +53,8 @@ export default class SingleNeighborhood extends Component {
       return (
         <div>
           <Link
+            className='route-card'
+            key={singleRoute._id}
             to={`/routes/${singleRoute._id}`}
             name={singleRoute.name}
             description={singleRoute.description}
@@ -64,31 +63,42 @@ export default class SingleNeighborhood extends Component {
             rating={singleRoute.rating}
             image={singleRoute.image}
             routeLink={singleRoute.routeLink}
-          >
-            {singleRoute.name}
-          </Link>
-        </div>
-      );
-    });
+            >
+            <CardDeck style={{ width: "300px", height: "350px" }}>
+              <Card>
+              <Card.Img variant="top" src={singleRoute.image} />
+              <Card.Body>
+                <Card.Title>{singleRoute.name}</Card.Title>
+                <Card.Text>{singleRoute.description}{singleRoute.distance}</Card.Text>
+                </Card.Body> 
 
-    let groupArr = this.state.groups.map(singleGroup => {
-      return (
-        <div>
-          <Link
-            to={`/groups/${singleGroup._id}`}
-            name={singleGroup.name}
-            description={singleGroup.description}
-            routes={singleGroup.routes}
-            contact={singleGroup.contact}
-          >
-            {singleGroup.name}
+              </Card>
+              </CardDeck> 
           </Link>
         </div>
       );
     });
+    // Not using group yet.
+    // let groupArr = this.state.groups.map(singleGroup => {
+    //   return (
+    //     <div>
+    //       <Link
+    //         key={singleGroup._id}
+    //         to={`/groups/${singleGroup._id}`}
+    //         name={singleGroup.name}
+    //         description={singleGroup.description}
+    //         routes={singleGroup.routes}
+    //         contact={singleGroup.contact}
+    //       >
+    //         {singleGroup.name}
+    //       </Link>
+    //     </div>
+    //   );
+    //   console.log(groupArr)
+    // });
     return (
       <div>
-        <ul class="navigation">
+        <ul className="navigation">
           <li>
             <a href="/">Home</a>
           </li>
@@ -97,11 +107,11 @@ export default class SingleNeighborhood extends Component {
           </li>
           <li>
             <a href={`/neighborhoods/${this.state.neighborhood._id}/edit`}>
-              Edit
+              Edit Neighborhood
             </a>
           </li>
           <li>
-            <a onClick={this.handleDelete}>Delete</a>
+            <a onClick={this.handleDelete}>Delete Neighborhood</a>
           </li>
         </ul>
         <h1>Neighborhood:</h1>
@@ -122,13 +132,13 @@ export default class SingleNeighborhood extends Component {
         <Link to={`/routes/${this.state.neighborhood._id}/create`}>
           Add a Route
         </Link>
-        <div>{routeArr}</div>
+        <div className='route-card-container'>{routeArr}</div>
 
-        <h2>Groups:</h2>
+        {/* <h2>Groups:</h2>
         <Link to={`/groups/${this.state.neighborhood._id}/create`}>
           Add a Group
         </Link>
-        <div>{groupArr}</div>
+        <div>{groupArr}</div> */}
       </div>
     );
   }

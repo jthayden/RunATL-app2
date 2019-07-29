@@ -1,8 +1,9 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  font-family: 'Raleway', sans-serif;
+/* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+    sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -15,6 +16,7 @@ code {
 html {
   /* background: lightgray; */
   margin: 30px;
+  
 }
 
 button {
@@ -88,6 +90,11 @@ video {
   flex-flow: row wrap;
   justify-content: flex-end;
   list-style: none;
+  
+}
+
+ul.navigation li {
+  margin: 25px;
 }
 
 .neighborhoods-container {
@@ -115,5 +122,18 @@ video {
 }
 
 img {
-  width: 90vw;
+  width: 70vw;
+}
+
+.route-card-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: space-between;
+  margin: 35px auto;
+}
+
+.route-map {
+  width:512px;
+  height:384px;
 }

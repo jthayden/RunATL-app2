@@ -28,11 +28,10 @@ button {
   margin:0px;
 }
 
-/* a {
-  margin: 15px;
-  display: block;
+a {
+  color: black;
   text-decoration-line: none;
-} */
+}
 
 input.button {
   margin-top: 15px;
@@ -142,4 +141,12 @@ img {
 .route-map {
   width:512px;
   height:384px;
+}
+
+p {
+  font-size: 18px;
+}
+
+.non-card {
+  margin: 24px;
 }

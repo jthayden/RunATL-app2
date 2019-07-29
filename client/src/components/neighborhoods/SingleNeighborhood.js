@@ -131,7 +131,7 @@ export default class SingleNeighborhood extends Component {
         </Link> */}
         {/* <button onClick={this.handleDelete}>Delete Neighborhood</button> */}
         <h2>{this.state.neighborhood.name}</h2>
-        <p>{this.state.neighborhood.description}</p>
+        <p className='non-card'>{this.state.neighborhood.description}</p>
         <img src={this.state.neighborhood.image} />
 
         {/* <button>

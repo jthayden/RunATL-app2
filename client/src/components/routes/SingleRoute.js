@@ -67,8 +67,8 @@ export default class SingleRoute extends Component {
         <h2>{this.state.route.name} </h2>
         <img className="route-image"src={this.state.route.image} />
         <p className='non-card'>{this.state.route.description} </p>
-        <p>Distance:{this.state.route.distance} miles </p>
-        <p>Rating:{this.state.route.rating} stars </p>
+        <p>Distance: {this.state.route.distance} miles </p>
+        <p>Rating: {this.state.route.rating} stars </p>
         <iframe className="route-map" src={this.state.route.routeLink} />
       </div>
     );

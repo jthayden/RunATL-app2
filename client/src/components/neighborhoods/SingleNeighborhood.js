@@ -140,13 +140,13 @@ export default class SingleNeighborhood extends Component {
 
         <h2>Routes:</h2>
 
+        
+        <div className="route-card-container">{routeArr}</div>
         <Button variant="outline-success">
           <Link to={`/routes/${this.state.neighborhood._id}/create`}>
             Add a Route
           </Link>
         </Button>
-        <div className="route-card-container">{routeArr}</div>
-
         {/* <h2>Groups:</h2>
         <Link to={`/groups/${this.state.neighborhood._id}/create`}>
           Add a Group

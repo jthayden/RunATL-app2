@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Redirect, Link } from "react-router-dom";
 import SingleNeighborhood from "../neighborhoods/SingleNeighborhood";
+import { Button } from "react-bootstrap";
 
 export default class SingleRoute extends Component {
   state = {
@@ -27,33 +28,49 @@ export default class SingleRoute extends Component {
     }
     return (
       <div>
-         <ul className="navigation">
+        <ul className="navigation">
           <li>
-            <a href="/">Home</a>
+            <Button variant="outline-success" href="/">
+              Home
+            </Button>
           </li>
           <li>
-            <a href="/neighborhoods">Neighborhoods</a>
+            <Button variant="outline-success" href="/neighborhoods">
+              Neighborhoods
+            </Button>
           </li>
           <li>
-            <a href={`/routes/${this.state.route._id}/edit`}>
+            <Button
+              variant="outline-success"
+              href={`/routes/${this.state.route._id}/edit`}
+            >
               Edit Route
-            </a>
+            </Button>
           </li>
           <li>
-            <a onClick={this.handleDelete}>Delete Route</a>
+            <Button
+              className="delete-button"
+              variant="outline-success"
+              onClick={this.handleDelete}
+            >
+              Delete Route
+            </Button>
           </li>
         </ul>
-        <Link to={`/neighborhoods/${this.state.route.neighborhoodId}`}>
-          Back to Neighborhood
-        </Link>
+        <Button variant="outline-success">
+          {" "}
+          <Link to={`/neighborhoods/${this.state.route.neighborhoodId}`}>
+            Back to Neighborhood
+          </Link>
+        </Button>
         <h2>Route</h2>
         <h2>{this.state.route.name} </h2>
-        <img src={this.state.route.image} />
+        <img className="route-image"src={this.state.route.image} />
         <p>{this.state.route.description} </p>
         <p>Distance:{this.state.route.distance} miles </p>
         <p>Rating:{this.state.route.rating} </p>
-        <iframe className='route-map' src={this.state.route.routeLink}  />
-        </div>
+        <iframe className="route-map" src={this.state.route.routeLink} />
+      </div>
     );
   }
 }

@@ -4,7 +4,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import CreateNeighborhood from "./CreateNeighborhood.js";
-import { Card, CardGroup, CardDeck, Image } from "react-bootstrap";
+import { Card, CardGroup, CardDeck, Image, Button } from "react-bootstrap";
 
 //Step 2
 
@@ -74,16 +74,15 @@ export default class Neighborhoods extends Component {
       <div>
         <ul className="navigation">
           <li>
-            <a href="/">Home</a>
+            <Button variant='outline-success' href="/">Home</Button>
           </li>
-        
           <li>
-            <a href="#">About</a>
+          <Button variant='outline-success' href="#">About</Button>
           </li>
         </ul>
         <h1>Neighborhoods</h1>
         <div className="neighborhoods-container">{neighborhoodsList}</div>
-        <Link to={"/neighborhoods/create"}>Add Neighborhood</Link>
+        <Button variant='outline-success'><Link to={"/neighborhoods/create"}>Add Neighborhood</Link></Button>
       </div>
     );
   }

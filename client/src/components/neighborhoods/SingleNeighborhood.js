@@ -3,13 +3,13 @@ import axios from "axios";
 import { Redirect, Link } from "react-router-dom";
 import EditNeighborhood from "./EditNeighborhood.js";
 import SingleRoute from "../routes/SingleRoute";
-import { Card, CardDeck } from 'react-bootstrap'
+import { Card, CardDeck, Button } from "react-bootstrap";
 
 export default class SingleNeighborhood extends Component {
   state = {
     neighborhood: {},
     redirectToHome: false,
-    routes: [],
+    routes: []
     // groups: []
   };
 
@@ -26,7 +26,7 @@ export default class SingleNeighborhood extends Component {
       .then(res => {
         this.setState({ routes: res.data });
       });
-    //Not using groups now. Future implementation.  
+    //Not using groups now. Future implementation.
     // axios
     //   .get(
     //     `/api/groups/byNeighborhoodId/${this.props.match.params.neighborhoodId}`
@@ -44,7 +44,6 @@ export default class SingleNeighborhood extends Component {
       });
   };
 
-
   render() {
     if (this.state.redirectToHome) {
       return <Redirect to="/neighborhoods" />;
@@ -53,7 +52,7 @@ export default class SingleNeighborhood extends Component {
       return (
         <div>
           <Link
-            className='route-card'
+            className="route-card"
             key={singleRoute._id}
             to={`/routes/${singleRoute._id}`}
             name={singleRoute.name}
@@ -63,17 +62,19 @@ export default class SingleNeighborhood extends Component {
             rating={singleRoute.rating}
             image={singleRoute.image}
             routeLink={singleRoute.routeLink}
-            >
+          >
             <CardDeck style={{ width: "300px", height: "350px" }}>
               <Card>
-              <Card.Img variant="top" src={singleRoute.image} />
-              <Card.Body>
-                <Card.Title>{singleRoute.name}</Card.Title>
-                <Card.Text>{singleRoute.description}{singleRoute.distance}</Card.Text>
-                </Card.Body> 
-
+                <Card.Img variant="top" src={singleRoute.image} />
+                <Card.Body>
+                  <Card.Title>{singleRoute.name}</Card.Title>
+                  <Card.Text>
+                    {singleRoute.description}
+                    {singleRoute.distance}
+                  </Card.Text>
+                </Card.Body>
               </Card>
-              </CardDeck> 
+            </CardDeck>
           </Link>
         </div>
       );
@@ -100,18 +101,27 @@ export default class SingleNeighborhood extends Component {
       <div>
         <ul className="navigation">
           <li>
-            <a href="/">Home</a>
+            <Button variant="outline-success" href="/">
+              Home
+            </Button>
           </li>
           <li>
-            <a href="/neighborhoods">Neighborhoods</a>
+            <Button variant="outline-success" href="/neighborhoods">
+              Neighborhoods
+            </Button>
           </li>
           <li>
-            <a href={`/neighborhoods/${this.state.neighborhood._id}/edit`}>
+            <Button
+              variant="outline-success"
+              href={`/neighborhoods/${this.state.neighborhood._id}/edit`}
+            >
               Edit Neighborhood
-            </a>
+            </Button>
           </li>
           <li>
-            <a onClick={this.handleDelete}>Delete Neighborhood</a>
+            <Button className='delete-button' variant="outline-success" onClick={this.handleDelete}>
+              Delete Neighborhood
+            </Button>
           </li>
         </ul>
         <h1>Neighborhood:</h1>
@@ -129,10 +139,12 @@ export default class SingleNeighborhood extends Component {
 
         <h2>Routes:</h2>
 
-        <Link to={`/routes/${this.state.neighborhood._id}/create`}>
-          Add a Route
-        </Link>
-        <div className='route-card-container'>{routeArr}</div>
+        <Button variant="outline-success">
+          <Link to={`/routes/${this.state.neighborhood._id}/create`}>
+            Add a Route
+          </Link>
+        </Button>
+        <div className="route-card-container">{routeArr}</div>
 
         {/* <h2>Groups:</h2>
         <Link to={`/groups/${this.state.neighborhood._id}/create`}>

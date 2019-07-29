@@ -1,7 +1,7 @@
 # Project 3
 ## RunATL App by John Hayden
 
-RunATL is an app used by runners looking to find good running parks and trails in the Atlanta area.
+RunATL is an app used by runners to find good running trails and parks in the Atlanta area.
 
 ### To view app, please visit:
 [RunATL](https://morning-island-53325.herokuapp.com/)

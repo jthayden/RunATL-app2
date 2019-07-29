@@ -69,9 +69,9 @@ export default class SingleNeighborhood extends Component {
                 <Card.Body>
                   <Card.Title>{singleRoute.name}</Card.Title>
                   <Card.Text>
-                    Distance: {singleRoute.distance}
-                    <br></br>
-                    Rating: {singleRoute.rating}
+                    Distance: {singleRoute.distance} miles
+                    <br />
+                    Rating: {singleRoute.rating} stars
                   </Card.Text>
                 </Card.Body>
               </Card>
@@ -80,24 +80,7 @@ export default class SingleNeighborhood extends Component {
         </div>
       );
     });
-    // Not using group yet.
-    // let groupArr = this.state.groups.map(singleGroup => {
-    //   return (
-    //     <div>
-    //       <Link
-    //         key={singleGroup._id}
-    //         to={`/groups/${singleGroup._id}`}
-    //         name={singleGroup.name}
-    //         description={singleGroup.description}
-    //         routes={singleGroup.routes}
-    //         contact={singleGroup.contact}
-    //       >
-    //         {singleGroup.name}
-    //       </Link>
-    //     </div>
-    //   );
-    //   console.log(groupArr)
-    // });
+    
     return (
       <div>
         <ul className="navigation">
@@ -120,38 +103,27 @@ export default class SingleNeighborhood extends Component {
             </Button>
           </li>
           <li>
-            <Button className='delete-button' variant="outline-success" onClick={this.handleDelete}>
+            <Button
+              className="delete-button"
+              variant="outline-success"
+              onClick={this.handleDelete}
+            >
               Delete Neighborhood
             </Button>
           </li>
         </ul>
         <h1>Neighborhood:</h1>
-        {/* <Link to={`/neighborhoods/${this.state.neighborhood._id}/edit`}>
-          Edit Neighborhood
-        </Link> */}
-        {/* <button onClick={this.handleDelete}>Delete Neighborhood</button> */}
         <h2>{this.state.neighborhood.name}</h2>
-        <p className='non-card'>{this.state.neighborhood.description}</p>
+        <p className="non-card">{this.state.neighborhood.description}</p>
         <img src={this.state.neighborhood.image} />
 
-        {/* <button>
-          <a href="/neighborhoods">Back to Neighborhoods</a>
-        </button> */}
-
         <h2>Routes:</h2>
-
-        
         <div className="route-card-container">{routeArr}</div>
         <Button variant="outline-success">
           <Link to={`/routes/${this.state.neighborhood._id}/create`}>
             Add a Route
           </Link>
         </Button>
-        {/* <h2>Groups:</h2>
-        <Link to={`/groups/${this.state.neighborhood._id}/create`}>
-          Add a Group
-        </Link>
-        <div>{groupArr}</div> */}
       </div>
     );
   }

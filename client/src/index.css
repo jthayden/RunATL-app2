@@ -54,6 +54,7 @@ input {
 
 h1, h2 {
   text-decoration-line: underline;
+  margin: 20px;
 }
 
 video {
@@ -107,7 +108,7 @@ ul.navigation li {
   flex-flow: row wrap;
   justify-content: center;
   align-content: space-between;
-  margin: 35px auto;
+  margin: 55px auto;
 }
 
 .neighborhood-card {

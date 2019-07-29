@@ -1,31 +1,28 @@
-# mern-template-project
+# Project 3
+## RunATL App by John Hayden
 
-# Setup A New Project From This Template
+RunATL is an app used by runners looking to find good running parks and trails in the Atlanta area.
 
-If you are starting a new project do the following:
+### To view app, please visit:
+[RunATL](https://morning-island-53325.herokuapp.com/)
 
-1. copy/download this directory to where you new project is located and rename
-   it to the name of your project.
-1. change your directory (`cd`) into the copied project template
-1. `npm install`
-1. `npm run dev`
-1. Open a new browser window and navigate to the URL http://localhost:3000/
-    here you should see `hello world` displayed after page load
-    updates should show up here automatically
-1. see the `client/src` `readme.md` file for more information on the react project
+### Technologies
+- HTML, CSS, JavaScript, Node, Express, Mongoose, Mongo, AJAX, and React.
 
-# Setup A New Project Without This Template
+### To view project board, please visit:
+[RunATL Project Board](https://trello.com/b/B2kGm9rO/runatl)
 
-If you want to start a project without using this template directory do the
-following:
+### To view gitHub Repo, please visit:
+[Current gitHub Repo](https://github.com/jthayden/RunATL-app2)
+
+[Previous gitHub Repo](https://github.com/jthayden/RunATL-App)
+
+### Wireframes:
+![RunATL](/public/images/RunATL.pdf)
 
 
-1. `mkdir <project-name>`
-1. `cd <project-name>`
-1. `echo "# <project-name>" > readme.md`
-1. `git init`
-1. `git add readme.md `
-1. `git commit -m "init repo with readme.md"`
-1. `npm init`
-1. `mkdir models views controllers`
-1. `touch ./server.js`
+### ERD:
+![RunATL](/public/images/RunatlERD.pdf)
+
+### RunATL 2.0
+To make RunATL even better, I would like to add a run group component, where runners can find run groups for certain parks/routes. I would also like to implement a weather API where the current weather is displayed for a certain neighborhood.

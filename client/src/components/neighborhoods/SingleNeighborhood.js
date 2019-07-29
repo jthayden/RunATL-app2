@@ -69,8 +69,9 @@ export default class SingleNeighborhood extends Component {
                 <Card.Body>
                   <Card.Title>{singleRoute.name}</Card.Title>
                   <Card.Text>
-                    {singleRoute.description}
-                    {singleRoute.distance}
+                    Distance: {singleRoute.distance}
+                    <br></br>
+                    Rating: {singleRoute.rating}
                   </Card.Text>
                 </Card.Body>
               </Card>

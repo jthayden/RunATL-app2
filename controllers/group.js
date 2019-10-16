@@ -1,16 +1,13 @@
 //Step 1 import express
-
 const express = require("express");
 
 //Step 2
 //Import the api files from the models
-
 const groupApi = require("../models/group");
 const neighborhoodApi = require("../models/neighborhood");
 
 //Step 3
 //Create a new router.
-
 const groupRouter = express.Router();
 
 //Step 4
@@ -64,7 +61,6 @@ groupRouter.delete("/:groupId", (req, res) => {
 
 //Step 6
 //Export the router from the file.
-
 module.exports = {
   groupRouter
 };

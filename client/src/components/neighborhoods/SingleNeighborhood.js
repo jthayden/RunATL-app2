@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Redirect, Link } from "react-router-dom";
-import EditNeighborhood from "./EditNeighborhood.js";
-import SingleRoute from "../routes/SingleRoute";
 import { Card, CardDeck, Button } from "react-bootstrap";
 
 export default class SingleNeighborhood extends Component {
@@ -10,7 +8,6 @@ export default class SingleNeighborhood extends Component {
     neighborhood: {},
     redirectToHome: false,
     routes: []
-    // groups: []
   };
 
   componentDidMount() {
@@ -26,14 +23,6 @@ export default class SingleNeighborhood extends Component {
       .then(res => {
         this.setState({ routes: res.data });
       });
-    //Not using groups now. Future implementation.
-    // axios
-    //   .get(
-    //     `/api/groups/byNeighborhoodId/${this.props.match.params.neighborhoodId}`
-    //   )
-    //   .then(res => {
-    //     this.setState({ groups: res.data });
-    //   });
   }
 
   handleDelete = () => {
@@ -116,7 +105,6 @@ export default class SingleNeighborhood extends Component {
         <h2>{this.state.neighborhood.name}</h2>
         <p className="non-card">{this.state.neighborhood.description}</p>
         <img src={this.state.neighborhood.image} />
-
         <h2>Routes:</h2>
         <div className="route-card-container">{routeArr}</div>
         <Button variant="outline-success">

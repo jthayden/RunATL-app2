@@ -1,13 +1,9 @@
-//Place all functions, classes, and/or DB schemas here for a single model.
-
 //Step 1
 //Import mongoose connection
-
 const mongoose = require("./connection.js");
 
 //Step 2
 //Create model schema
-
 const GroupSchema = new mongoose.Schema({
   name: String,
   description: String,
@@ -18,11 +14,9 @@ const GroupSchema = new mongoose.Schema({
 
 //Step 3
 //Create collection API
-
 const GroupCollection = mongoose.model("Group", GroupSchema);
 
 //Step 4
-
 function getAllGroups() {
   return GroupCollection.find();
 }
@@ -51,7 +45,6 @@ function deleteGroup(groupId) {
 
 //Step 5
 //Export all functions from this file by adding their names as keys to this object
-
 module.exports = {
   getAllGroups,
   getGroup,

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Redirect } from "react-router-dom";
-import SingleNeighborhood from "../neighborhoods/SingleNeighborhood";
 
 export default class CreateRoute extends Component {
   state = {
@@ -21,14 +20,7 @@ export default class CreateRoute extends Component {
     const idRoute = { ...this.state.newRoute };
     idRoute.neighborhoodId = this.props.match.params.neighborhoodId;
     this.setState({ newRoute: idRoute });
-    // this.getAllRoutes();
   }
-
-  //   getAllRoutes = () => {
-  //     axios.get("/api/routes").then(res => {
-  //       this.setState({ routes: res.data });
-  //     });
-  //   };
 
   handleInputChange = event => {
     event.preventDefault();
@@ -48,7 +40,6 @@ export default class CreateRoute extends Component {
       )
       .then(() => {
         this.setState({ redirectToHome: true });
-        //   this.getAllRoutes();
       });
   };
 

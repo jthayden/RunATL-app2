@@ -12,10 +12,6 @@ import SingleGroup from './components/groups/SingleGroup'
 import CreateGroup from './components/groups/CreateGroup'
 import EditGroup from './components/groups/EditGroup'
 import "./App.css";
-// import Routes from "./components/Routes";
-// import SingleNeighborhood from "./components/SingleNeighborhood";
-// import Groups from "./components/Groups.js";
-// import SingleGroup from "./components/SingleGroup.js";
 
 function App() {
   return (
@@ -37,9 +33,6 @@ function App() {
           <Route exact path='/groups/:groupId' component={SingleGroup}/>
           <Route exact path='/groups/:neighborhoodId/create' component={CreateGroup}/>
           <Route exact path='/groups/:groupId/edit' component={EditGroup}/>
-          {/* <Route exact path="/routes" component={Routes} /> */}
-          {/* <Route exact path="/groups" component={Groups} /> */}
-          {/* <Route exact path="/groups/:groupId" component={SingleGroup} /> */}
         </Switch>
       </Router>
     </div>

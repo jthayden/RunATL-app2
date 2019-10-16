@@ -1,14 +1,9 @@
-//Place all functions, classes, and/or DB schemas here for a single
-//model.
-
 //Step 1
 //Import mongoose connection
-
 const mongoose = require("./connection.js");
 
 // Step 2
 //Create model schema
-
 const RouteSchema = new mongoose.Schema({
   name: String,
   description: String,
@@ -21,11 +16,9 @@ const RouteSchema = new mongoose.Schema({
 
 //Step 3
 //Create collection API
-
 const RouteCollection = mongoose.model("Route", RouteSchema);
 
 //Step 4
-
 function getAllRoutes() {
   return RouteCollection.find();
 }
@@ -53,9 +46,7 @@ function deleteRoute(routeId) {
 }
 
 //Step 5
-//Export all functions from this file by adding their names as keys to this
-//object
-
+//Export all functions
 module.exports = {
   getAllRoutes,
   getRoute,

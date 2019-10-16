@@ -1,16 +1,13 @@
 //Step 1 import express
-
 const express = require("express");
 
 //Step 2
 //Import the api files from the models
-
 const routeApi = require("../models/route.js");
 const neighborhoodApi = require("../models/neighborhood");
 
 //Step 3
 //Create a new router.
-
 const routeRouter = express.Router();
 
 //Step 4
@@ -64,7 +61,6 @@ routeRouter.delete("/:routeId", (req, res) => {
 
 //Step 5
 //Export the router from the file.
-
 module.exports = {
   routeRouter
 };

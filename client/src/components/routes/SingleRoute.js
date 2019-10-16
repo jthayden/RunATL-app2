@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Redirect, Link } from "react-router-dom";
-import SingleNeighborhood from "../neighborhoods/SingleNeighborhood";
 import { Button } from "react-bootstrap";
 
 export default class SingleRoute extends Component {

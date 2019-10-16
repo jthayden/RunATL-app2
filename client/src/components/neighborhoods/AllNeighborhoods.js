@@ -1,16 +1,9 @@
-//Step 1 import React, { Component } and axios
-
 import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import CreateNeighborhood from "./CreateNeighborhood.js";
-import { Card, CardGroup, CardDeck, Image, Button } from "react-bootstrap";
-
-//Step 2
+import { Card, CardDeck, Button } from "react-bootstrap";
 
 export default class Neighborhoods extends Component {
-  //Step 3
-  //Create a state for the component to store view data
   state = {
     neighborhoods: [],
     newNeighborhood: {
@@ -20,13 +13,6 @@ export default class Neighborhoods extends Component {
     }
   };
 
-  /* Step 4
-   * Use componentDidMount to retrieve any data to display
-   *   Here you can make calls to your local express server
-   *   or to an external API
-   *   setState can be run here as well
-   *   -REMINDER remember `setState` it is an async function
-   */
   componentDidMount() {
     this.getAllNeighborhoods();
   }
@@ -37,12 +23,6 @@ export default class Neighborhoods extends Component {
     });
   };
 
-  /* Step 5
-   *  The render function manages what is shown in the browser
-   *  TODO: delete the jsx returned
-   *   and replace it with your own custom jsx template
-   *
-   */
   render() {
     let neighborhoodsList = this.state.neighborhoods.map(neighborhood => {
       return (
@@ -51,20 +31,13 @@ export default class Neighborhoods extends Component {
           key={neighborhood._id}
           to={`/neighborhoods/${neighborhood._id}`}
         >
-          {/* {neighborhood.name} */}
           <CardDeck style={{ width: "300px", height: "350px" }}>
             <Card>
-              {/* <Card. */}
               <Card.Img variant="top" src={neighborhood.image} />
-              {/* variant="top"  */}
               <Card.Body>
                 <Card.Title>{neighborhood.name}</Card.Title>
-
                 <Card.Text>{neighborhood.description}</Card.Text>
               </Card.Body>
-              {/* <Card.Footer>
-                <small className="text-muted">Last updated 3 mins ago</small>
-              </Card.Footer> */}
             </Card>
           </CardDeck>
         </Link>

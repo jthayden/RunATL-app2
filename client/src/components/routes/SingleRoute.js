@@ -38,7 +38,7 @@ export default class SingleRoute extends Component {
               Neighborhoods
             </Button>
           </li>
-          <li>
+          {/* <li>
             <Button
               variant="outline-success"
               href={`/routes/${this.state.route._id}/edit`}
@@ -54,7 +54,7 @@ export default class SingleRoute extends Component {
             >
               Delete Route
             </Button>
-          </li>
+          </li> */}
         </ul>
         <Button variant="outline-success">
           {" "}

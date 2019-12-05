@@ -83,15 +83,15 @@ export default class SingleNeighborhood extends Component {
               Neighborhoods
             </Button>
           </li>
-          <li>
+          {/* <li>
             <Button
               variant="outline-success"
               href={`/neighborhoods/${this.state.neighborhood._id}/edit`}
             >
               Edit Neighborhood
             </Button>
-          </li>
-          <li>
+          </li> */}
+          {/* <li>
             <Button
               className="delete-button"
               variant="outline-success"
@@ -99,7 +99,7 @@ export default class SingleNeighborhood extends Component {
             >
               Delete Neighborhood
             </Button>
-          </li>
+          </li> */}
         </ul>
         <h1>Neighborhood:</h1>
         <h2>{this.state.neighborhood.name}</h2>
@@ -107,11 +107,11 @@ export default class SingleNeighborhood extends Component {
         <img src={this.state.neighborhood.image} />
         <h2>Routes:</h2>
         <div className="route-card-container">{routeArr}</div>
-        <Button variant="outline-success">
+        {/* <Button variant="outline-success">
           <Link to={`/routes/${this.state.neighborhood._id}/create`}>
             Add a Route
           </Link>
-        </Button>
+        </Button> */}
       </div>
     );
   }

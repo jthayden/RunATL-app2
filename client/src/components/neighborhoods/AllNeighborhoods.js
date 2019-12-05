@@ -55,7 +55,7 @@ export default class Neighborhoods extends Component {
         </ul>
         <h1>Neighborhoods</h1>
         <div className="neighborhoods-container">{neighborhoodsList}</div>
-        <Button variant='outline-success'><Link to={"/neighborhoods/create"}>Add Neighborhood</Link></Button>
+        {/* <Button variant='outline-success'><Link to={"/neighborhoods/create"}>Add Neighborhood</Link></Button> */}
       </div>
     );
   }

@@ -62,8 +62,7 @@ export default class SingleRoute extends Component {
             Back to Neighborhood
           </Link>
         </Button>
-        <h2>Route</h2>
-        <h2>{this.state.route.name} </h2>
+        <h1>{this.state.route.name} </h1>
         <img className="route-image"src={this.state.route.image} />
         <p className='non-card'>{this.state.route.description} </p>
         <p>Distance: {this.state.route.distance} miles </p>

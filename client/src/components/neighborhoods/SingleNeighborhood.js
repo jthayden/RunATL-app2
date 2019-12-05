@@ -101,11 +101,11 @@ export default class SingleNeighborhood extends Component {
             </Button>
           </li> */}
         </ul>
-        <h1>Neighborhood:</h1>
-        <h2>{this.state.neighborhood.name}</h2>
+        {/* <h1>Neighborhood:</h1> */}
+        <h1>{this.state.neighborhood.name}</h1>
         <p className="non-card">{this.state.neighborhood.description}</p>
         <img src={this.state.neighborhood.image} />
-        <h2>Routes:</h2>
+        <h2>Routes</h2>
         <div className="route-card-container">{routeArr}</div>
         {/* <Button variant="outline-success">
           <Link to={`/routes/${this.state.neighborhood._id}/create`}>
